@@ -1,85 +1,70 @@
-# PROGRAMMING ASSIGNMENT 5
+# PROGRAMMING ASSIGNMENT 6
 
-**Due: Tuesday, March 12th, 2024, 2:30 PM**
+**Due: Tuesday, March 19th, 2025, 2:30 PM**
 
 --- 
 
 <br/>
-<h1><center>BINARY SEARCH TREE (BST) </h1></center>
+<h1><center>HEAPS</h1></center>
 
 <br/>
 
-In this assignment, you will implement a Binary Search Tree (BST) data structure with the following public methods, making sure that the tree satisifes the BST properties at all times:
+Implement a Heap data structure, using Array-based representation, with the following public methods:
 
-1. `insert(int value)`: Inserts a new element to the BST. If the element is already in the BST, it should not be added again. 
+1. `insert(char value)`: Inserts a new element to the heap.
+2. `delete()`: Deletes the root element from the heap.
+3. `peek()`: Returns the root element of the heap.
+4. `size()`: Returns the number of elements in the heap.
+5. `isEmpty()`: Returns true if the heap is empty, and false otherwise.
+6. `clear()`: Clears the heap.
+7. `toString()`: Returns a string representation of all elements in the heap.
 
-2. `delete(int value)`: Deletes an element from the BST. If the element is not in the BST, the method should do nothing.
+Please work in groups of three for this assignment and divide the work as follows: 
 
-3. `search(int value)`: Returns true if the BST contains the specified element, and false otherwise.
+- One person implements the MaxHeap class.
+- One person implements the MinHeap class.
+- One person implements the JUnit test cases for both MinHeap and MaxHeap.
 
-4. `update(int oldValue, int newValue)`: Updates an element in the BST. If the element is not in the BST, the method should do nothing.
+The division of work above must be reflected in the commit history of your repository i.e. the commit history must show the one person worked on the MaxHeap class, the other person worked on the MinHeap class, and the third person worked on the JUnit test cases.
 
-5. `inOrder()`: Returns a string representation of all elements in the BST in in-order traversal.
+Note that the division of work above would ensure no merge conflicts occur when you push your changes to GitHub. 
 
-6. `sortedArrayToBST(int[] values)`: Creates a height-balanced BST from a sorted array of integers. The method should return the root of the BST. 
+The common Heap interface that both the MaxHeap and MinHeap classes should implement is as follows:
 
-    [Try it on Leetcode as well](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+```java
+package csc223.<your initials>;
 
-   A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.
+public interface Heap {
 
-   Example 1:
+    // Insert an item to the heap
+    void insert(char value);
 
-   _Input_: `nums = [-10,-3,0,5,9]` <br/>
-   _Output_: \
-   <img src="https://assets.leetcode.com/uploads/2021/02/18/btree1.jpg">
-   or 
-   <img src="https://assets.leetcode.com/uploads/2021/02/18/btree2.jpg">
+    // Delete the root element from the heap
+    void delete();
 
-   Example 2:
+    // Get the root element of the heap
+    char peek();
 
+    // Get the size of the heap
+    int size();
 
-    _Input_: `nums = [1,3]` <br/>
-    _Output_: \
-    <img src="https://assets.leetcode.com/uploads/2021/02/18/btree.jpg">
+    // Check if the heap is empty
+    boolean isEmpty();
 
-    _Explanation_: [1,null,3] and [3,1] are both height-balanced BSTs.
+    // Clear the heap
+    void clear();
 
-<br/>
+    // Return a string representation of all elements in the heap
+    String toString();
+}
+```
 
-7. `lowestCommonAncestor(int p, int q)`: Returns the lowest common ancestor of two elements in the BST. If either element is not in the BST, the method should return -1. 
+One of you needs to add the other two as collaborators to your repository (forked version, one associated with your username, not CSC223) for this assignment. 
 
-    [Try it on Leetcode as well](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+To add collaborators to your repository, go to the repository on GitHub, click on the "Settings" tab, then click on "Manage access" in the left sidebar. Click on the "Invite a collaborator" button and add the GitHub usernames of your group members.
 
-   Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
-
-   The lowest common ancestor is defined between two nodes `p` and `q` as the lowest node in `T` that has both `p` and `q` as descendants (where we allow **a node to be a descendant of itself**).”
-
-   **Example 1**:
-
-   Given binary search tree:  
-   <img src="https://assets.leetcode.com/uploads/2018/12/14/binarysearchtree_improved.png">
-
-   _Input_: `root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8` \
-_Output_: `6` \
-_Explanation_: The LCA of nodes 2 and 8 is 6.
-
-   **Example 2**:
-
-   Given binary search tree:  
-   <img src="https://assets.leetcode.com/uploads/2018/12/14/binarysearchtree_improved.png">
-
-
-   _Input_: `root = [6,2,8,0,4,7,9,null,null,3,5]`, `p = 2`, `q = 4` \
-_Output_: `2` \
-_Explanation_: The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
-
-Feel free to define any additional helper methods or classes as needed. 
-
-All helper methods must be private.
 
 ## Evaluation
 
 Your submission will be evaluated based on the correctness **_and completeness_** of your implementation and test cases. If your implementation is correct but your test cases are incomplete, you will lose points. If your implementation is incorrect, you will lose even more points.
-
-
 
